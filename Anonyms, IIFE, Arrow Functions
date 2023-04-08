@@ -1,0 +1,116 @@
+1) Print odd numbers----------------------------------
+anonymous: function oddNumbers(num) {
+    for (var i = 0; i < num.length; i++) {
+        if (num[i] % 2 != 0) {
+            console.log(num[i])
+        }
+    }
+}
+oddNumbers([1,2,3,4,5,6,7,8,9])
+IIFE: (function (num) {
+    for (var i = 0; i < num.length; i++) {
+        if (num[i] % 2 != 0) {
+            console.log(num[i])
+        }
+    }
+})([1,2,3,4,5,6,7,8,9])
+
+Arrow Function oddNumbers = (num) => {
+for (var i = 0; i < num.length; i++) {
+    if (num[i] % 2 != 0) {
+        console.log(num[i])
+    }
+}
+}
+oddNumbers([1,2,3,4,5,6,7,8,9])     
+
+2) Convert all the strings to title caps -------------------------
+
+anonymous: function capitalWord(word) {
+    word = word.toLowerCase().split(' ');
+    for (var i = 0; i < word.length; i++) {
+        word[i] = word[i].charAt(0).toUpperCase() + word[i].slice(1);
+    }
+    console.log(word.join(' '));
+}
+capitalWord('vijay')
+
+IIFE: (function (str) {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return str.join(' ');
+})("vijay");
+
+Arrow Function: titleCase = (str) => {
+str = str.toLowerCase().split(' ');
+for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+}
+return str.join(' ');
+}
+titleCase('vijay')
+
+3) Sum of all numbers ----------------------------------------------------------
+anonymous: function sumOfAll(num) {
+    var sum = 0;
+    for (var i = 0; i < num.length; i++) {
+        sum = sum + num[i];
+    }
+    console.log(sum) ;
+}
+
+sumOfAll([1,2,3,4,5,6,7,8,9])
+IIFE: (function (num) {
+    var sum = 0;
+    for (var i = 0; i < num.length; i++) {
+        sum = sum + num[i];
+    }
+    console.log(sum);
+})([1,2,3,4,5,6,7,8,9])
+Arrow: sum = (num) => {
+    var sum = 0;
+    for (var i = 0; i < num.length; i++) {
+        sum = sum + num[i];
+    }
+    console.log(sum);
+    }
+    sum([1,2,3,4,5,6,7,8,9]) 
+    
+
+4) Return all the prime numbers--------------------------
+Anonymous Function:
+function primeNumber(nums) {
+    nums = nums.filter((number) => {
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) return false;
+        }
+        return true;
+    });
+    console.log(nums);
+}
+primeNumber([1,2,3,4,5,6,7,8,9])
+IIFE
+    (
+        function primeNumber(nums) {
+            nums = nums.filter((number) => {
+                for (var i = 2; i <= Math.sqrt(number); i++) {
+                    if (number % i === 0) return false;
+                }
+                return true;
+            });
+            console.log(nums);
+        })([1,2,3,4,5,6,7,8,9])
+Arrow Function:
+
+    primeNumber = (nums) => {
+        nums = nums.filter((number) => {
+            for (var i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) return false;
+            }
+            return true;
+        });
+        console.log(nums);
+    }
+    primeNumber([1,2,3,4,5,6,7,8,9])
